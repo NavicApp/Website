@@ -1,0 +1,149 @@
+:root {
+	color-scheme: dark;
+	-webkit-font-smoothing: antialiased;
+	font-variation-settings: "ROND" 100 !important;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: var(--m3c-surface-container);
+	color: var(--m3c-on-surface);
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	--font-primary:
+		var(--font-gsans), "Google Sans Flex", "Google Sans", "SF Pro Text",
+		-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif, system-ui;
+	font-family: var(--font-primary);
+	font-weight: 400;
+	line-height: 1.5;
+	font-size: 16px;
+}
+
+:root {
+	--m3c-surface: #0c0e12;
+	--m3c-surface-container-lowest: #000;
+	--m3c-surface-container-low: #101418;
+	--m3c-surface-container: #161a1f;
+	--m3c-surface-container-high: #1c2026;
+	--m3c-surface-container-highest: #21262d;
+	--m3c-on-surface: #e1e5ef;
+	--m3c-on-surface-variant: #a7abb4;
+	--m3c-outline: #71767e;
+	--m3c-outline-variant: #434850;
+	--m3c-inverse-surface: #f9f9fe;
+	--m3c-inverse-on-surface: #535559;
+	--m3c-primary: #aec9eb;
+	--m3c-on-primary: #27425e;
+	--m3c-primary-container: #3a5471;
+	--m3c-on-primary-container: #d2e5ff;
+	--m3c-inverse-primary: #47617f;
+	--m3c-secondary: #bac8db;
+	--m3c-on-secondary: #354151;
+	--m3c-secondary-container: #303c4c;
+	--m3c-on-secondary-container: #b3c0d3;
+	--m3c-tertiary: #e0d8ff;
+	--m3c-on-tertiary: #4f4972;
+	--m3c-tertiary-container: #d1c9fa;
+	--m3c-on-tertiary-container: #464069;
+	--m3c-error: #fa746f;
+	--m3c-on-error: #490006;
+	--m3c-error-container: #871f21;
+	--m3c-on-error-container: #ff9993;
+	--m3c-shadow: #000;
+	--m3c-scrim: #000;
+	--m3c-on-on-primary: #aec8eb;
+	--m3c-primary-container-subtle: #112e49;
+	--m3c-on-primary-container-subtle: #93adce;
+	--m3c-secondary-container-subtle: #202d3c;
+	--m3c-on-secondary-container-subtle: #9facbf;
+	--m3c-tertiary-container-subtle: #2d274d;
+	--m3c-on-tertiary-container-subtle: #ada5d4;
+	--m3c-error-container-subtle: #60000a;
+	--m3c-on-error-container-subtle: #ff8983;
+
+	--m3-easing-fast: linear(
+			0,
+			0.02 2.3%,
+			0.08 5.1%,
+			0.265,
+			0.452,
+			0.61,
+			0.732,
+			0.82 33.7%,
+			0.89,
+			0.93 46.9%,
+			0.974 58.6%,
+			0.994,
+			1
+		)
+		0.15s;
+	--m3-elevation-1:
+		0px 1px 2px 0px oklch(from var(--m3c-shadow) l c h / 0.3),
+		0px 1px 3px 1px oklch(from var(--m3c-shadow) l c h / 0.15);
+	--m3-elevation-2:
+		0px 1px 2px 0px oklch(from var(--m3c-shadow) l c h / 0.3),
+		0px 2px 6px 2px oklch(from var(--m3c-shadow) l c h / 0.15);
+	--m3-elevation-3:
+		0px 1px 3px 0px oklch(from var(--m3c-shadow) l c h / 0.3),
+		0px 4px 8px 3px oklch(from var(--m3c-shadow) l c h / 0.15);
+	--m3-elevation-4:
+		0px 2px 3px 0px oklch(from var(--m3c-shadow) l c h / 0.3),
+		0px 6px 10px 4px oklch(from var(--m3c-shadow) l c h / 0.15);
+	--m3-elevation-5:
+		0px 4px 4px 0px oklch(from var(--m3c-shadow) l c h / 0.3),
+		0px 8px 12px 6px oklch(from var(--m3c-shadow) l c h / 0.15);
+}
+
+a {
+	color: var(--m3c-primary);
+}
+
+main {
+	flex: 1;
+}
+
+.content-container {
+	max-width: 1000px;
+	margin: 0 auto;
+	width: 95%;
+}
+
+.layer {
+	position: relative;
+}
+
+.layer::after {
+	content: "";
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: white;
+	opacity: 0;
+	transition: opacity 0.15s;
+	border-radius: inherit;
+}
+
+.layer:hover::after {
+	opacity: 0.075;
+}
+
+h2 {
+	margin-top: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+	text-decoration-style: wavy;
+	text-decoration-color: currentColor;
+}

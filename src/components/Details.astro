@@ -1,0 +1,51 @@
+---
+import ChevronDown from "@icons/chevron-down.svg";
+interface Props {
+	title: string;
+	description: string;
+}
+const { title, description } = Astro.props as Props;
+---
+
+<details>
+	<summary class="m3-layer">
+		{title}
+		<ChevronDown class="icon" />
+	</summary>
+	<div class="content">
+		{description}
+	</div>
+</details>
+
+<style>
+	details {
+		border-radius: 20px;
+		overflow: hidden;
+		box-shadow: var(--m3-elevation-1);
+	}
+	summary {
+		font-weight: 500;
+		color: var(--m3c-on-surface);
+		padding: 15px;
+		background: var(--m3c-surface-container-highest);
+		border-radius: 5px;
+		cursor: pointer;
+		user-select: none;
+		list-style: none;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.content {
+		background: var(--m3c-surface-container-high);
+		border-radius: 5px;
+		padding: 15px;
+		margin-top: 3px;
+	}
+	details :global(.icon) {
+		transition: scale 0.25s;
+	}
+	details[open] :global(.icon) {
+		scale: 1 -1;
+	}
+</style>

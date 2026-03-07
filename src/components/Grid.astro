@@ -1,0 +1,19 @@
+<div class="grid">
+	<slot />
+</div>
+
+<style>
+	.grid {
+		display: flex;
+		gap: 12px;
+		flex-wrap: wrap;
+		margin-top: 12px;
+	}
+	.grid :global(.card) {
+		margin-top: 0 !important;
+	}
+	.grid > :global(*) {
+		flex: 1;
+		min-width: 250px;
+	}
+</style>

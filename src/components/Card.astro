@@ -1,0 +1,42 @@
+---
+interface Props extends astroHTML.JSX.HTMLAttributes {
+	className?: string;
+	variant?: "outlined" | "filled" | "elevated";
+	rounding?: string;
+}
+const {
+	className,
+	variant = "filled",
+	rounding = "12px",
+	...props
+} = Astro.props as Props;
+---
+
+<div
+	class={className ? `card ${className}` : "card"}
+	data-variant={variant}
+	style={{ "--rounding": rounding }}
+	{...props}
+>
+	<slot />
+</div>
+
+<style>
+	.card {
+		padding: 16px;
+		border-radius: var(--rounding);
+		color: var(--m3c-on-surface);
+		box-shadow: var(--m3-elevation-1);
+		margin-top: 16px;
+	}
+	.card[data-variant="outlined"] {
+		background: var(--m3c-surface);
+		border: solid 1px var(--m3c-outline-variant);
+	}
+	.card[data-variant="filled"] {
+		background: var(--m3c-surface-container-high);
+	}
+	.card[data-variant="elevated"] {
+		background: var(--m3c-surface-container-highest);
+	}
+</style>

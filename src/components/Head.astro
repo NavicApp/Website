@@ -1,0 +1,43 @@
+---
+import { Font } from "astro:assets";
+import { ClientRouter } from "astro:transitions";
+interface Props {
+	title?: string;
+	description?: string;
+}
+const props = Astro.props as Props;
+const title = `Navic — ${props.title || "Open Source Navidrome Client"}`;
+const {
+	description = "A free and open source client for Navidrome, supporting Android and iOS.",
+} = props;
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>{title}</title>
+<meta property="og:title" content={title} />
+<meta property="og:site_name" content="Navic" />
+
+<meta property="og:description" content={description} />
+<meta name="twitter:description" content={description} />
+<meta property="og:description" content={description} />
+
+<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+<link rel="icon" href="/favicon.png" />
+<meta
+	name="keywords"
+	content="Navic, Navidrome client, Subsonic client, open source music player, Android music streamer, iOS Subsonic, Material 3 music app, Material 3 expressive"
+/>
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="/cover.avif" />
+
+<Font cssVariable="--font-gsans" preload />
+<Font cssVariable="--font-maple-mono" preload />
+
+<meta name="theme-color" content="#1c2026" />
+
+<ClientRouter />

@@ -1,0 +1,89 @@
+---
+interface Props {
+	href?: string;
+	className?: string;
+	target?: astroHTML.JSX.HTMLAttributeAnchorTarget;
+	variant?: "tonal" | "filled" | "text";
+	size?: "medium" | "large";
+	isSquare?: boolean;
+}
+
+const {
+	href,
+	target,
+	className,
+	variant = "filled",
+	size = "medium",
+	isSquare = false,
+} = Astro.props as Props;
+---
+
+{
+	href ? (
+		<a
+			class={className ? `button layer ${className}` : "button layer"}
+			href={href}
+			target={target ?? "_self"}
+			data-variant={variant}
+			data-size={size}
+			data-isSquare={isSquare}
+		>
+			<slot />
+		</a>
+	) : (
+		<button
+			class={className ? `button layer ${className}` : "button layer"}
+			data-variant={variant}
+			data-size={size}
+			data-isSquare={isSquare}
+		>
+			<slot />
+		</button>
+	)
+}
+
+<style>
+	.button {
+		display: inline-flex;
+		font-size: 14px;
+		line-height: 1.429;
+		height: 40px;
+		padding: 0 16px;
+		font-family: var(--font-primary);
+		font-weight: 500;
+		border-radius: 28px;
+		border: none;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		cursor: pointer;
+		transition: border-radius var(--m3-easing-fast);
+		text-decoration: none;
+		margin-right: 8px;
+		margin-top: 16px;
+	}
+	.button[data-size="large"] {
+		line-height: 1.5;
+		height: 56px;
+		padding: 0 24px;
+		font-size: 16px;
+	}
+	.button[data-variant="filled"] {
+		background: var(--m3c-primary);
+		color: var(--m3c-on-primary);
+	}
+	.button[data-variant="tonal"] {
+		background: var(--m3c-secondary-container);
+		color: var(--m3c-on-secondary-container);
+	}
+	.button[data-variant="text"] {
+		background: transparent;
+		color: var(--m3c-primary);
+	}
+	.button[data-isSquare="true"] {
+		border-radius: 12px;
+	}
+	.button:active {
+		border-radius: 8px;
+	}
+</style>

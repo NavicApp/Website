@@ -1,0 +1,47 @@
+---
+import Card from "@components/Card.astro";
+import Grid from "@components/Grid.astro";
+import Lyrics from "@icons/lyrics.svg";
+import Code from "@icons/code.svg";
+import Bolt from "@icons/bolt.svg";
+import Palette from "@icons/palette.svg";
+import Settings from "@icons/settings.svg";
+import Widgets from "@icons/widgets.svg";
+---
+
+<Grid>
+	<Card>
+		<h4><Palette class="icon" />Beautiful Design</h4>
+		<p>Navic boasts the Material 3 Expressive design language, which is Google's latest design system.</p>
+	</Card>
+	<Card>
+		<h4><Widgets class="icon" />Widgets</h4>
+		<p>Navic features a couple of home screen widgets with a consistent Material design.</p>
+	</Card>
+	<Card>
+		<h4><Lyrics class="icon" />Lyrics</h4>
+		<p>Navic supports a couple of lyric providers out of the box and has a beautiful lyrics interface.</p>
+	</Card>
+	<Card>
+		<h4><Bolt class="icon" />Powerful</h4>
+		<p>Navic implements most of Subsonic's API, letting you manage and see your library easily, for example, create/modify playlists and shares, and more.</p>
+	</Card>
+	<Card>
+		<h4><Settings class="icon" />Highly customisable</h4>
+		<p>Navic has many settings and more to come. Basic theming is also possible.</p>
+	</Card>
+	<Card>
+		<h4><Code class="icon" />Free & open source</h4>
+		<p>Navic is free and open source forever, and was originally made in need of an open source Navidrome client.</p>
+	</Card>
+</Grid>
+
+<style>
+	.icon {
+		vertical-align: middle;
+		margin-right: 7px;
+	}
+	h4 {
+		margin: 0;
+	}
+</style>

@@ -2,6 +2,7 @@ import { defineConfig, fontProviders } from "astro/config";
 
 export default defineConfig({
 	site: "https://navic.app",
+	trailingSlash: "ignore",
 	experimental: {
 		fonts: [
 			{

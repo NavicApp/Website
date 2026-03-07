@@ -19,7 +19,10 @@ const links = [
 					href={link.href}
 					isSquare
 					variant={
-						link.href === Astro.url.pathname ? "tonal" : "text"
+						link.href === Astro.url.pathname ||
+						`${link.href}/` === Astro.url.pathname
+							? "tonal"
+							: "text"
 					}
 				>
 					{link.title}

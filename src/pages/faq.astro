@@ -1,43 +1,74 @@
 ---
 import Details from "@components/Details.astro";
-import Card from "@components/Card.astro";
-import Android from "@icons/android.svg";
 import Layout from "@layouts/MainLayout.astro";
+const mainEntity = [
+	{
+		"@type": "Question",
+		name: "What is Navidrome, and why does Navic use it?",
+		acceptedAnswer: {
+			"@type": "Answer",
+			text: "Navidrome is a free and open source music streaming program, allowing you to stream a local copy of your music library without relying on any external services at all, such as Spotify. Navic uses Navidrome as it is a fairly popular choice.",
+		},
+	},
+	{
+		"@type": "Question",
+		name: "Is Navic free?",
+		acceptedAnswer: {
+			"@type": "Answer",
+			text: "Navic is completely free and open source.",
+		},
+	},
+	{
+		"@type": "Question",
+		name: "Is Navic stable?",
+		acceptedAnswer: {
+			"@type": "Answer",
+			text: "Navic is not yet stable and is in a pre-release alpha state. However, most things should work just fine!",
+		},
+	},
+	{
+		"@type": "Question",
+		name: "Why Navic over other Navidrome clients?",
+		acceptedAnswer: {
+			"@type": "Answer",
+			text: "Most Navidrome clients are closed source. This project was started in hopes of making an open and free alternative. Additionally, most clients just simply don't look very pretty, and we wanted to fix all of this. Navic is also native, making it one of the faster and efficient clients. It uses Compose and Kotlin.",
+		},
+	},
+	{
+		"@type": "Question",
+		name: "Does Navic work with other streaming services?",
+		acceptedAnswer: {
+			"@type": "Answer",
+			text: "For now, no. However, some plugins for other services have been made to add compatibility with Navidrome clients.",
+		},
+	},
+	{
+		"@type": "Question",
+		name: "Does Navic work with OpenSubsonic/Subsonic?",
+		acceptedAnswer: {
+			"@type": "Answer",
+			text: "Yes, it's just advertised for Navidrome for discoverability and to be easy to find. Navic will work on normal Subsonic, but some features may not work, so you should use an OpenSubsonic-compatible server.",
+		},
+	},
+];
 ---
 
 <Layout
 	title="Frequently Asked Questions"
 	description="Answers to frequently asked questions about Navic"
+	type="FAQPage"
+	mainEntity={mainEntity}
 >
 	<div class="page-content">
 		<h2>Frequently Asked Questions</h2>
 		<span style="text-align: center;"
 			>Some answers to common questions about Navic.</span
 		>
-		<Details
-			title="What is Navidrome, and why does Navic use it?"
-			description="Navidrome is a free and open source music streaming program, allowing you to stream a local copy of your music library without relying on any external services at all, such as Spotify. Navic uses Navidrome as it is a fairly popular choice."
-		/>
-		<Details
-			title="Is Navic free?"
-			description="Navic is completely free and open source."
-		/>
-		<Details
-			title="Is Navic stable?"
-			description="Navic is not yet stable and is in a pre-release alpha state. However, most things should work just fine!"
-		/>
-		<Details
-			title="Why Navic over other Navidrome clients?"
-			description="Most Navidrome clients are closed source. This project was started in hopes of making an open and free alternative. Additionally, most clients just simply don't look very pretty, and we wanted to fix all of this. Navic is also native, making it one of the faster and efficient clients. It uses Compose and Kotlin."
-		/>
-		<Details
-			title="Does Navic work with other streaming services?"
-			description="For now, no. However, some plugins for other services have been made to add compatibility with Navidrome clients."
-		/>
-		<Details
-			title="Does Navic work with OpenSubsonic/Subsonic?"
-			description="Yes, it's just advertised for Navidrome for discoverability and to be easy to find. Navic will work on normal Subsonic, but some features may not work, so you should use an OpenSubsonic-compatible server."
-		/>
+		{
+			mainEntity.map((qa) => (
+				<Details title={qa.name} description={qa.acceptedAnswer.text} />
+			))
+		}
 	</div>
 </Layout>
 

@@ -115,6 +115,7 @@ main {
 
 .layer {
 	position: relative;
+	overflow: hidden;
 }
 
 .layer::after {
@@ -130,8 +131,25 @@ main {
 	border-radius: inherit;
 }
 
-.layer:hover::after {
+.layer:hover::after,
+.layer:active::after {
 	opacity: 0.075;
+}
+
+.ripple {
+	top: 0;
+	left: 0;
+	transform: translateX(-50%) translateY(-50%);
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	background: white;
+	opacity: 0.075;
+	transition:
+		opacity 0.15s,
+		width 0.15s,
+		height 0.15s;
+	border-radius: 9999px;
 }
 
 h2 {
@@ -146,4 +164,29 @@ a:hover {
 	text-decoration: underline;
 	text-decoration-style: wavy;
 	text-decoration-color: currentColor;
+}
+
+@keyframes page-transition-out {
+	0% {
+		opacity: 1;
+		scale: 1;
+	}
+	100% {
+		opacity: 0;
+		scale: 0.75;
+		transform: translateX(-10vw);
+	}
+}
+
+@keyframes page-transition-in {
+	0% {
+		opacity: 0;
+		scale: 0.75;
+		transform: translateX(20vw);
+	}
+	100% {
+		opacity: 1;
+		scale: 1;
+		transform: translateX(0%);
+	}
 }

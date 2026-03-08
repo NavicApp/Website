@@ -8,7 +8,7 @@ interface Props {
 	mainEntity?: any[];
 }
 const props = Astro.props as Props;
-const title = `Navic — ${props.title || "Open Source Navidrome Client"}`;
+const title = `Navic${props.title ? ` · ${props.title}` : ""}`;
 const url = new URL(Astro.url.pathname, Astro.site);
 const schema = JSON.stringify({
 	"@context": "https://schema.org",

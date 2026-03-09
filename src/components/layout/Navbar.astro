@@ -18,7 +18,10 @@ const links = [
 			links.map((link) => (
 				<Button
 					href={
-						link.href === Astro.url.pathname ? undefined : link.href
+						link.href === Astro.url.pathname ||
+						`${link.href}/` === Astro.url.pathname
+							? undefined
+							: link.href
 					}
 					isSquare
 					variant={

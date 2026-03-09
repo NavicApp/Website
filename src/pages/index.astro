@@ -1,12 +1,15 @@
 ---
-import library from "@assets/library.avif";
+import library from "@assets/library.png";
+import player from "@assets/player.png";
+import lyrics from "@assets/lyrics.png";
+import albums from "@assets/albums.png";
 import Card from "@components/containers/Card.astro";
 import Button from "@components/controls/Button.astro";
 import Features from "@components/misc/Features.astro";
+import Carousel from "@components/misc/Carousel.astro";
 import Code from "@icons/code.svg";
 import Download from "@icons/download.svg";
 import Layout from "@layouts/MainLayout.astro";
-import { Image } from "astro:assets";
 ---
 
 <Layout>
@@ -22,8 +25,8 @@ import { Image } from "astro:assets";
 					Navic is a free and open source client for <a
 						href="https://navidrome.org"
 						target="_blank">Navidrome</a
-					>, supporting Android and iOS.</p
-				>
+					>, supporting Android and iOS.
+				</p>
 				<Button size="large" href="/downloads">
 					<Download />
 					Downloads</Button
@@ -36,12 +39,27 @@ import { Image } from "astro:assets";
 					Source Code</Button
 				>
 			</div>
-			<div class="hero-right">
-				<Image
-					src={library}
-					alt="A screenshot of Navic's library tab"
-				/>
-			</div>
+			<Carousel
+				class="hero-right"
+				images={[
+					{
+						src: library,
+						alt: "A screenshot of Navic's library tab",
+					},
+					{
+						src: player,
+						alt: "A screenshot of Navic's now playing screen",
+					},
+					{
+						src: lyrics,
+						alt: "A screenshot of Navic's lyrics screen",
+					},
+					{
+						src: albums,
+						alt: "A screenshot of Navic's albums tab",
+					},
+				]}
+			/>
 		</Card>
 		<Features />
 	</section>
@@ -75,10 +93,10 @@ import { Image } from "astro:assets";
 		flex: 1.2;
 		padding-left: 10px;
 	}
-	.hero-right {
+	:global(.hero-right) {
 		flex: 1;
 	}
-	.hero-right > img {
+	:global(.hero-right) :global(img) {
 		width: 100%;
 		height: 600px;
 		object-position: top;
@@ -89,7 +107,7 @@ import { Image } from "astro:assets";
 		box-shadow: var(--m3-elevation-1);
 	}
 	@media (max-width: 944px) {
-		.hero-right {
+		:global(.hero-right) {
 			display: none;
 		}
 		.hero-left {

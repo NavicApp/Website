@@ -18,25 +18,6 @@ export default defineConfig({
 					],
 				},
 			},
-			{
-				provider: fontProviders.local(),
-				name: "Maple Mono",
-				cssVariable: "--font-maple-mono",
-				options: {
-					variants: [
-						{
-							weight: "100 900",
-							style: "normal",
-							src: ["./src/assets/fonts/maple-mono.ttf"],
-						},
-						{
-							weight: "100 900",
-							style: "italic",
-							src: ["./src/assets/fonts/maple-mono-italic.ttf"],
-						},
-					],
-				},
-			},
 		],
 	},
 });

@@ -3,6 +3,7 @@ document.addEventListener("astro:page-load", () => {
 		layer.draggable = false;
 		layer.addEventListener("pointerdown", (event) => {
 			const rect = layer.getBoundingClientRect();
+			const size = `${Math.max(rect.width, rect.height) * 2}px`;
 			const ripple = document.createElement("div");
 			ripple.className = "ripple";
 			Object.assign(ripple.style, {
@@ -11,8 +12,8 @@ document.addEventListener("astro:page-load", () => {
 			});
 			layer.appendChild(ripple);
 
-			ripple.animate([{ width: "500px", height: "500px" }], {
-				duration: 1000,
+			ripple.animate([{ width: size, height: size }], {
+				duration: 500,
 				easing: `linear(0, 0.02 2.3%, 0.08 5.1%, 0.265, 0.452, 0.61, 0.732, 0.82 33.7%, 0.89, 0.93 46.9%, 0.974 58.6%, 0.994, 1)`,
 				fill: "forwards",
 			});

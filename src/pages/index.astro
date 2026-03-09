@@ -1,8 +1,8 @@
 ---
 import library from "@assets/library.avif";
-import Button from "@components/Button.astro";
-import Card from "@components/Card.astro";
-import Features from "@components/Features.astro";
+import Card from "@components/containers/Card.astro";
+import Button from "@components/controls/Button.astro";
+import Features from "@components/misc/Features.astro";
 import Code from "@icons/code.svg";
 import Download from "@icons/download.svg";
 import Layout from "@layouts/MainLayout.astro";
@@ -22,20 +22,19 @@ import { Image } from "astro:assets";
 					Navic is a free and open source client for <a
 						href="https://navidrome.org"
 						target="_blank">Navidrome</a
-					>, supporting Android and iOS.
-				</p>
+					>, supporting Android and iOS.</p
+				>
 				<Button size="large" href="/downloads">
 					<Download />
-					Downloads
-				</Button>
-				<Button
+					Downloads</Button
+				><Button
 					size="large"
 					variant="tonal"
 					href="https://github.com/paigely/Navic"
 				>
 					<Code />
-					Source Code
-				</Button>
+					Source Code</Button
+				>
 			</div>
 			<div class="hero-right">
 				<Image
@@ -96,8 +95,5 @@ import { Image } from "astro:assets";
 		.hero-left {
 			padding-bottom: 10px;
 		}
-	}
-	#table-desc {
-		text-align: center;
 	}
 </style>

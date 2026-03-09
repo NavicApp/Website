@@ -1,0 +1,29 @@
+---
+import Button, { type Props } from "@components/controls/Button.astro";
+const {
+	href,
+	target,
+	variant = "text",
+	size,
+	isSquare = true,
+	...props
+} = Astro.props as Omit<Props, "class">;
+---
+
+<Button
+	{...props}
+	href={href}
+	target={target}
+	class="icon-button"
+	variant={variant}
+	size={size}
+	isSquare={isSquare}
+>
+	<slot />
+</Button>
+
+<style>
+	:global(.icon-button) {
+		padding: 8px !important;
+	}
+</style>

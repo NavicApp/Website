@@ -1,7 +1,6 @@
 ---
-interface Props {
+export interface Props extends astroHTML.JSX.HTMLAttributes {
 	href?: string;
-	className?: string;
 	target?: astroHTML.JSX.HTMLAttributeAnchorTarget;
 	variant?: "tonal" | "filled" | "text";
 	size?: "medium" | "large";
@@ -11,17 +10,19 @@ interface Props {
 const {
 	href,
 	target,
-	className,
+	class: className,
 	variant = "filled",
 	size = "medium",
 	isSquare = false,
+	...props
 } = Astro.props as Props;
 ---
 
 {
 	href ? (
 		<a
-			class={className ? `button layer ${className}` : "button layer"}
+			{...props}
+			class:list={["button layer", className]}
 			href={href}
 			target={target ?? "_self"}
 			data-variant={variant}
@@ -32,7 +33,8 @@ const {
 		</a>
 	) : (
 		<button
-			class={className ? `button layer ${className}` : "button layer"}
+			{...props}
+			class:list={["button layer", className]}
 			data-variant={variant}
 			data-size={size}
 			data-isSquare={isSquare}
@@ -61,6 +63,7 @@ const {
 		text-decoration: none;
 		margin-right: 8px;
 		margin-top: 16px;
+		user-select: none;
 	}
 	.button[data-size="large"] {
 		line-height: 1.5;

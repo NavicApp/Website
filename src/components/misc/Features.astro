@@ -1,17 +1,17 @@
 ---
-import Card from "@components/Card.astro";
-import Grid from "@components/Grid.astro";
+import Card from "@components/containers/Card.astro";
+import Grid from "@components/containers/Grid.astro";
 import Lyrics from "@icons/lyrics.svg";
 import Code from "@icons/code.svg";
 import Bolt from "@icons/bolt.svg";
-import Palette from "@icons/palette.svg";
-import Settings from "@icons/settings.svg";
+import Design from "@icons/design.svg";
+import Paintbrush from "@icons/paintbrush.svg";
 import Widgets from "@icons/widgets.svg";
 ---
 
 <Grid>
 	<Card>
-		<h4><Palette class="icon" />Beautiful Design</h4>
+		<h4><Design class="icon" />Beautiful Design</h4>
 		<p>Navic boasts the Material 3 Expressive design language, which is Google's latest design system.</p>
 	</Card>
 	<Card>
@@ -27,7 +27,7 @@ import Widgets from "@icons/widgets.svg";
 		<p>Navic implements most of Subsonic's API, letting you manage and see your library easily, for example, create/modify playlists and shares, and more.</p>
 	</Card>
 	<Card>
-		<h4><Settings class="icon" />Highly customisable</h4>
+		<h4><Paintbrush class="icon" />Highly customisable</h4>
 		<p>Navic has many settings and more to come. Basic theming is also possible.</p>
 	</Card>
 	<Card>
@@ -43,5 +43,12 @@ import Widgets from "@icons/widgets.svg";
 	}
 	h4 {
 		margin: 0;
+		display: flex;
+		align-items: center;
+		line-height: 24px !important;
+	}
+	p {
+		margin-top: 5px;
+		margin-bottom: 0;
 	}
 </style>

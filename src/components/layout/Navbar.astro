@@ -1,5 +1,6 @@
 ---
-import Button from "@components/Button.astro";
+import Button from "@components/controls/Button.astro";
+import IconButton from "@components/controls/IconButton.astro";
 import Codeberg from "@icons/codeberg.svg";
 import Discord from "@icons/discord.svg";
 import GitHub from "@icons/github.svg";
@@ -16,7 +17,9 @@ const links = [
 		{
 			links.map((link) => (
 				<Button
-					href={link.href}
+					href={
+						link.href === Astro.url.pathname ? undefined : link.href
+					}
 					isSquare
 					variant={
 						link.href === Astro.url.pathname ||
@@ -30,38 +33,34 @@ const links = [
 			))
 		}
 		<div class="spacer"></div>
-		<Button
-			variant="text"
-			isSquare
-			className="social"
+		<IconButton
 			href="https://matrix.to/#/#navic:maize.moe"
+			aria-label="Matrix room"
+			title="Matrix"
 		>
 			<Matrix />
-		</Button>
-		<Button
-			variant="text"
-			isSquare
-			className="social"
+		</IconButton>
+		<IconButton
 			href="https://discord.gg/TBcnNX66PH"
+			aria-label="Discord server"
+			title="Discord"
 		>
 			<Discord />
-		</Button>
-		<Button
-			variant="text"
-			isSquare
-			className="social"
+		</IconButton>
+		<IconButton
 			href="https://codeberg.org/paige/Navic"
+			aria-label="Codeberg"
+			title="Codeberg"
 		>
 			<Codeberg />
-		</Button>
-		<Button
-			variant="text"
-			isSquare
-			className="social"
+		</IconButton>
+		<IconButton
 			href="https://github.com/paigely/Navic"
+			aria-label="GitHub"
+			title="Github"
 		>
 			<GitHub />
-		</Button>
+		</IconButton>
 	</div>
 </nav>
 
@@ -82,12 +81,8 @@ const links = [
 	.spacer {
 		flex: 1;
 	}
-	nav :global(a) {
+	nav :global(a),
+	nav :global(button) {
 		margin-top: 0 !important;
-	}
-	:global(.social) {
-		padding: 0 !important;
-		width: 40px !important;
-		height: 40px !important;
 	}
 </style>

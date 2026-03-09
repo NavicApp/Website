@@ -132,7 +132,8 @@ main {
 }
 
 .layer:hover::after,
-.layer:active::after {
+.layer:active::after,
+.layer:focus-visible::after {
 	opacity: 0.075;
 }
 
@@ -189,4 +190,26 @@ a:hover {
 		scale: 1;
 		transform: translateX(0%);
 	}
+}
+
+::selection {
+	background: var(--m3c-tertiary-container);
+	color: var(--m3c-on-tertiary-container);
+}
+
+:focus-visible {
+	animation: focus ease-out 0.4s forwards;
+}
+
+@keyframes focus {
+	0% {
+		outline: 8px var(--m3c-primary) solid;
+	}
+	100% {
+		outline: 4px var(--m3c-primary) solid;
+	}
+}
+
+img {
+	user-select: none;
 }

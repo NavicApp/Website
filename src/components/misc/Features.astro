@@ -1,10 +1,11 @@
 ---
 import Card from "@components/containers/Card.astro";
 import Grid from "@components/containers/Grid.astro";
-import Lyrics from "@icons/lyrics.svg";
-import Code from "@icons/code.svg";
 import Bolt from "@icons/bolt.svg";
+import Code from "@icons/code.svg";
 import Design from "@icons/design.svg";
+import Lyrics from "@icons/lyrics.svg";
+import Offline from "@icons/offline.svg";
 import Paintbrush from "@icons/paintbrush.svg";
 import Widgets from "@icons/widgets.svg";
 ---
@@ -34,10 +35,26 @@ import Widgets from "@icons/widgets.svg";
 		<h4><Paintbrush class="icon" />Customisable</h4>
 		<p>Tweak everything with Navic's extensive settings, down to the little details, such as the tab bar layout.</p>
 	</Card>
-	<h5 style="text-align: center; font-size: 16px; margin-top: 10px; margin-bottom: 0;">...and more!</h5>
+	<Card>
+		<h4><Offline class="icon" />Works Offline <div class="new">NEW</div></h4>
+		<p>Fully featured offline two-way library syncing, with the ability to download songs.</p>
+	</Card>
 </Grid>
 
+<h5 style="text-align: center; font-size: 16px; margin-top: 10px; margin-bottom: 0;">...and more!</h5>
+
 <style>
+	.new {
+		background: var(--m3c-error);
+		color: var(--m3c-on-error);
+		border-radius: 9999px;
+		padding-left: 5px;
+		padding-right: 5px;
+		margin-left: 5px;
+		font-size: 12px;
+		line-height: 16px;
+		user-select: none;
+	}
 	.icon {
 		vertical-align: middle;
 		margin-right: 7px;

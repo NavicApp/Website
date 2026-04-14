@@ -65,44 +65,6 @@ const uuid = `carousel-${crypto.randomUUID().substring(0, 8)}`;
 		background: var(--m3c-primary-container-subtle);
 		border-radius: 9999px;
 		box-shadow: var(--m3-elevation-3);
-		animation: animate-in
-			linear(
-				0,
-				0.0018,
-				0.0071 1.17%,
-				0.0164,
-				0.029 2.45%,
-				0.0646 3.77%,
-				0.1161 5.23%,
-				0.1662 6.46%,
-				0.2302 7.88%,
-				0.4971 13.36%,
-				0.6124 15.85%,
-				0.7219 18.49%,
-				0.8108 20.99%,
-				0.8504,
-				0.886,
-				0.9177,
-				0.9457 26.08%,
-				0.9709,
-				0.9924 28.72%,
-				1.0111,
-				1.0263 31.46%,
-				1.0435 33.51%,
-				1.0553 35.71%,
-				1.0617 38.06%,
-				1.0632 40.7%,
-				1.0608 43%,
-				1.055 45.69%,
-				1.0263 55.33%,
-				1.015 59.69%,
-				1.0071 63.7%,
-				1.0015 67.76%,
-				0.9976 72.8%,
-				0.9961 78.62%,
-				0.9991 99.95%
-			)
-			0.75s forwards;
 	}
 	.tab {
 		display: flex;
@@ -160,12 +122,5 @@ const uuid = `carousel-${crypto.randomUUID().substring(0, 8)}`;
 		[type="radio"]:nth-of-type(4):checked
 		~ .tab-content:nth-of-type(4) {
 		display: block;
-	}
-
-	@keyframes animate-in {
-		0% {
-			gap: 0;
-			transform: translateX(-50%) translateY(50px) scaleX(0.25) scaleY(2);
-		}
 	}
 </style>

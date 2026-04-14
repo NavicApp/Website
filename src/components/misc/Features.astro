@@ -7,37 +7,42 @@ import Design from "@icons/design.svg";
 import Lyrics from "@icons/lyrics.svg";
 import Offline from "@icons/offline.svg";
 import Paintbrush from "@icons/paintbrush.svg";
+import Radio from "@icons/radio.svg";
 import Widgets from "@icons/widgets.svg";
 ---
 
 <Grid>
 	<Card>
-		<h4><Design class="icon" />Beautiful</h4>
+		<h4><Design /> <span>Beautiful</span></h4>
 		<p>Navic boasts the Material 3 Expressive design language, Google's latest design system.</p>
 	</Card>
 	<Card>
-		<h4><Bolt class="icon" />Powerful</h4>
+		<h4><Bolt /> <span>Powerful</span></h4>
 		<p>Most features from Navidrome's API are implemented inside Navic, and are all wrapped up in an intuitive interface.</p>
 	</Card>
 	<Card>
-		<h4><Code class="icon" />Free & Open Source</h4>
+		<h4><Code /> <span>Free & Open Source</span></h4>
 		<p>Unlike many clients, Navic is free and open source, forever. No subscriptions, paywalls, or spyware!</p>
 	</Card>
 	<Card>
-		<h4><Widgets class="icon" />Widgets</h4>
+		<h4><Widgets /> <span>Widgets</span></h4>
 		<p>Based off of Google's widget designs, Navic features a couple of home screen widgets with sleek designs.</p>
 	</Card>
 	<Card>
-		<h4><Lyrics class="icon" />Lyrics</h4>
+		<h4><Lyrics /> <span>Lyrics</span></h4>
 		<p>Beautiful lyrics UI, with support for <a href="https://lrclib.net/">LRCLIB</a>, embedded/local lyrics, and word-by-word lyrics from <a href="https://github.com/ibratabian17/YouLyPlus">YouLyPlus</a>!</p>
 	</Card>
 	<Card>
-		<h4><Paintbrush class="icon" />Customisable</h4>
+		<h4><Paintbrush /> <span>Customisable</span></h4>
 		<p>Tweak everything with Navic's extensive settings, down to the little details, such as the tab bar layout.</p>
 	</Card>
 	<Card>
-		<h4><Offline class="icon" />Works Offline <div class="new">NEW</div></h4>
-		<p>Fully featured offline two-way library syncing, with the ability to download songs.</p>
+		<h4><Offline /> <span>Works Offline</span> <div class="new">NEW</div></h4>
+		<p>Fully featured library syncing for offline access. Supports two-way syncing, offline scrobbling, and download management.</p>
+	</Card>
+	<Card>
+		<h4><Radio /> <span>Radios</span> <div class="new">NEW</div></h4>
+		<p>Add and stream your favourite radio stations.</p>
 	</Card>
 </Grid>
 
@@ -50,23 +55,20 @@ import Widgets from "@icons/widgets.svg";
 		border-radius: 9999px;
 		padding-left: 5px;
 		padding-right: 5px;
-		margin-left: 5px;
 		font-size: 12px;
-		line-height: 16px;
 		user-select: none;
-	}
-	.icon {
-		vertical-align: middle;
-		margin-right: 7px;
 	}
 	h4 {
 		margin: 0;
 		display: flex;
 		align-items: center;
-		line-height: 24px !important;
+		gap: 7px;
+	}
+	h4 span {
+		transform: translateY(1px);
 	}
 	p {
-		margin-top: 5px;
+		margin-top: 4px;
 		margin-bottom: 0;
 	}
 	.bottom-card {

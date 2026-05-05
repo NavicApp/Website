@@ -4,7 +4,6 @@ import IconButton from "@components/controls/IconButton.astro";
 import Codeberg from "@icons/codeberg.svg";
 import Discord from "@icons/discord.svg";
 import GitHub from "@icons/github.svg";
-import Matrix from "@icons/matrix.svg";
 const links = [
 	{ href: "/", title: "Home" },
 	{ href: "/downloads", title: "Downloads" },
@@ -36,13 +35,6 @@ const links = [
 			))
 		}
 		<div class="spacer"></div>
-		<IconButton
-			href="https://matrix.to/#/#navic:maize.moe"
-			aria-label="Matrix room"
-			title="Matrix"
-		>
-			<Matrix />
-		</IconButton>
 		<IconButton
 			href="https://discord.gg/TBcnNX66PH"
 			aria-label="Discord server"

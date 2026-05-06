@@ -2,88 +2,104 @@
 import Card from "@components/containers/Card.astro";
 import Button from "@components/controls/Button.astro";
 import Android from "@icons/android.svg";
+import Apple from "@icons/apple.svg";
+import Package from "@icons/package.svg";
+import Diamond from "@icons/diamond.svg";
+import Fan from "@icons/fan.svg";
+import Download from "@icons/download.svg";
 import Layout from "@layouts/MainLayout.astro";
+const links = {
+	apk: "https://github.com/paigely/Navic/releases/latest/download/Navic.apk",
+	ipa: "https://github.com/paigely/Navic/releases/latest/download/Navic.ipa",
+	obtainium:
+		"https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22paige.navic%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fpaigely%2FNavic%22%2C%22author%22%3A%22paigely%22%2C%22name%22%3A%22Navic%22%2C%22preferredApkIndex%22%3A0%2C%22additionalSettings%22%3A%22%7B%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22fallbackToOlderReleases%5C%22%3Atrue%2C%5C%22filterReleaseTitlesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22filterReleaseNotesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22verifyLatestTag%5C%22%3Afalse%2C%5C%22sortMethodChoice%5C%22%3A%5C%22date%5C%22%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Afalse%2C%5C%22releaseTitleAsVersion%5C%22%3Afalse%2C%5C%22trackOnly%5C%22%3Afalse%2C%5C%22versionExtractionRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22matchGroupToUse%5C%22%3A%5C%22%5C%22%2C%5C%22versionDetection%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Afalse%2C%5C%22useVersionCodeAsOSVersion%5C%22%3Afalse%2C%5C%22apkFilterRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22invertAPKFilter%5C%22%3Afalse%2C%5C%22autoApkFilterByArch%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22%5C%22%2C%5C%22appAuthor%5C%22%3A%5C%22%5C%22%2C%5C%22shizukuPretendToBeGooglePlay%5C%22%3Afalse%2C%5C%22allowInsecure%5C%22%3Afalse%2C%5C%22exemptFromBackgroundUpdates%5C%22%3Afalse%2C%5C%22skipUpdateNotifications%5C%22%3Afalse%2C%5C%22about%5C%22%3A%5C%22%5C%22%2C%5C%22refreshBeforeDownload%5C%22%3Afalse%7D%22%2C%22overrideSource%22%3Anull%7D",
+	altsource:
+		"https://stikstore.app/altdirect/?url=https://raw.githubusercontent.com/paigely/Navic/refs/heads/master/app-repo.json",
+	testflight: "https://testflight.apple.com/join/QUAsubnR",
+	releases: "https://github.com/paigely/Navic/releases",
+};
 ---
 
 <Layout title="Downloads" description="Download Navic for Android and iOS">
 	<div class="content">
-		<h1 style="text-align: center;">Android</h1>
-		<p style="text-align: center;">
-			Obtainium is recommended for auto updates.</p
-		>
-		<div class="button-row">
-			<Button
-				size="large"
-				href="https://github.com/paigely/Navic/releases/latest/download/Navic.apk"
-			>
-				Download APK<Android /></Button
-			>
-			<Button
-				size="large"
-				variant="tonal"
-				href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22paige.navic%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fpaigely%2FNavic%22%2C%22author%22%3A%22paigely%22%2C%22name%22%3A%22Navic%22%2C%22preferredApkIndex%22%3A0%2C%22additionalSettings%22%3A%22%7B%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22fallbackToOlderReleases%5C%22%3Atrue%2C%5C%22filterReleaseTitlesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22filterReleaseNotesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22verifyLatestTag%5C%22%3Afalse%2C%5C%22sortMethodChoice%5C%22%3A%5C%22date%5C%22%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Afalse%2C%5C%22releaseTitleAsVersion%5C%22%3Afalse%2C%5C%22trackOnly%5C%22%3Afalse%2C%5C%22versionExtractionRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22matchGroupToUse%5C%22%3A%5C%22%5C%22%2C%5C%22versionDetection%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Afalse%2C%5C%22useVersionCodeAsOSVersion%5C%22%3Afalse%2C%5C%22apkFilterRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22invertAPKFilter%5C%22%3Afalse%2C%5C%22autoApkFilterByArch%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22%5C%22%2C%5C%22appAuthor%5C%22%3A%5C%22%5C%22%2C%5C%22shizukuPretendToBeGooglePlay%5C%22%3Afalse%2C%5C%22allowInsecure%5C%22%3Afalse%2C%5C%22exemptFromBackgroundUpdates%5C%22%3Afalse%2C%5C%22skipUpdateNotifications%5C%22%3Afalse%2C%5C%22about%5C%22%3A%5C%22%5C%22%2C%5C%22refreshBeforeDownload%5C%22%3Afalse%7D%22%2C%22overrideSource%22%3Anull%7D"
-			>
-				Add to Obtainium</Button
-			>
+		<h2 class="card-title">
+			<Download />
+			Get Navic
+		</h2>
+		<div class="card-list">
+			<Card className="card" variant="elevated">
+				<h2 class="card-title">
+					<Android />
+					Android
+				</h2>
+				<p>
+					You can add Navic to Obtainium for automatic updates or
+					sideload the APK.
+				</p>
+				<Button isSquare href={links.obtainium}>
+					<Diamond />
+					Obtainium
+				</Button>
+				<Button isSquare href={links.apk}>
+					<Package />
+					APK
+				</Button>
+			</Card>
+			<Card className="card" variant="elevated">
+				<h2 class="card-title">
+					<Apple />
+					iOS
+				</h2>
+				<p>
+					You can get Navic on TestFlight or sideload it using the
+					AltSource, or manually install the IPA.
+				</p>
+				<Button isSquare href={links.testflight}>
+					<Fan />
+					TestFlight
+				</Button>
+				<Button isSquare href={links.altsource}>
+					<Package />
+					AltSource
+				</Button>
+				<Button isSquare href={links.ipa}>
+					<Package />
+					IPA
+				</Button>
+			</Card>
 		</div>
-		<div></div>
-		<h2 style="text-align: center;">Other platforms</h2>
-		<Card variant="elevated">
-			<h1>iOS</h1>
-			<p>
-				<a
-					href="https://github.com/paigely/Navic/releases/latest/download/Navic.ipa"
-				>
-					Download the IPA,
-				</a>
-				or you can add it to your favourite sideloading app using the
-				<a
-					href="https://stikstore.app/altdirect/?url=https://raw.githubusercontent.com/paigely/Navic/refs/heads/master/app-repo.json"
-				>
-					AltSource.
-				</a>
-				Note that the AltSource link will work in
-				<b>any sideloading app/service,</b>
-				including AltStore, Sidestore, Feather and more.</p
-			>
-			<p>
-				<b>Navic will never be on TestFlight or the App Store.</b> Please
-				do not ask if it will be. <a
-					href="https://developer.apple.com/support/compare-memberships/"
-					>This would require me to pay $100 a year.</a
-				>
-			</p>
-		</Card>
-		<a
-			href="https://github.com/paigely/Navic/releases"
-			style="text-align:center;">All releases</a
-		>
+		<p>
+			Note for iOS users: the TestFlight has a limited amount of
+			participants and may not always be up to date. The AltSource link
+			supports a wide range of sideloading apps, such as AltStore and
+			Feather.
+		</p>
 	</div>
 </Layout>
 
 <style>
 	.content {
 		margin: auto;
-		max-width: 650px;
 		margin-top: 70px;
 		padding-left: 24px;
 		padding-right: 24px;
 		display: flex;
 		flex-direction: column;
-		gap: 20px;
 	}
-	h1 {
-		margin: 0;
-	}
-	h2 {
-		margin: 0;
-	}
-	.button-row {
+	.card-list {
 		display: flex;
-		gap: 10px;
-		justify-content: center;
+		width: 100%;
+		gap: 8px;
+		flex-wrap: wrap;
 	}
-	.button-row > :global(*) {
-		margin: 0;
+	.card {
+		flex: 1;
+		overflow: hidden;
+		min-width: 400px;
+	}
+	.card-title {
+		display: flex;
+		align-items: center;
+		gap: 8px;
 	}
 </style>

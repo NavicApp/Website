@@ -1,0 +1,28 @@
+---
+import Card from "./Card.astro";
+
+interface Props extends astroHTML.JSX.HTMLAttributes {
+	className?: string;
+}
+
+const { className, ...props } = Astro.props as Props;
+---
+
+<Card
+	className={className ? `codeblock ${className}` : "codeblock"}
+	variant="outlined"
+	{...props}
+>
+	<slot />
+</Card>
+
+<style>
+	.codeblock {
+		font-family: var(--font-mono);
+		overflow: scroll !important;
+		margin: 0;
+	}
+	.codeblock > :global(pre) {
+		font-family: var(--font-mono);
+	}
+</style>

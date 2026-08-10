@@ -15,3 +15,5 @@ export const pageTransition = {
 	forwards: anim,
 	backwards: anim,
 };
+
+export const CERT_HASH = "paige.navic\nDB:73:63:E8:FD:71:E4:CD:D1:3D:14:C0:73:D6:20:85:88:B0:2B:B2:79:1D:D1:97:C5:5F:9C:BA:9D:7A:52:E4"

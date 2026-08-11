@@ -9,6 +9,7 @@ import Diamond from "@icons/diamond.svg"
 import Download from "@icons/download.svg"
 import Fan from "@icons/fan.svg"
 import Package from "@icons/package.svg"
+import AltDirect from "@icons/alt-direct.svg"
 import Layout from "@layouts/MainLayout.astro"
 
 import IconButton from "@/components/controls/IconButton.astro"
@@ -62,7 +63,7 @@ const links = {
 					TestFlight
 				</Button>
 				<Button isSquare href={links.altDirect}>
-					<Package />
+					<AltDirect />
 					AltDirect
 				</Button>
 				<Button isSquare href={links.ipa}>
@@ -79,13 +80,7 @@ const links = {
 		</p>
 		<h3>Certificate hash</h3>
 		<p>
-			You can verify this hash using
-			{" "}
-			<a
-				href="https://github.com/soupslurpr/AppVerifier"
-			>AppVerifier
-			</a
-			>
+			You can verify this hash using <a href="https://github.com/soupslurpr/AppVerifier">AppVerifier</a>
 		</p>
 		<div class="codeblock-wrapper">
 			<Codeblock id="cert-hash">{CERT_HASH}</Codeblock>
@@ -95,8 +90,7 @@ const links = {
 				isSquare
 			>
 				<Copy />
-			</IconButton
-			>
+			</IconButton>
 		</div>
 	</div>
 </Layout>

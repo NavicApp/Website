@@ -4,7 +4,7 @@ export default defineConfig({
 	site: "https://navic.app",
 	trailingSlash: "ignore",
 	server: {
-		host: "0.0.0.0"
+		host: "127.0.0.1"
 	},
 	fonts: [
 		{

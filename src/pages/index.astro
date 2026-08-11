@@ -1,63 +1,53 @@
 ---
-import library from "@assets/library.png";
-import player from "@assets/player.png";
-import lyrics from "@assets/lyrics.png";
-import albums from "@assets/albums.png";
-import Card from "@components/containers/Card.astro";
-import Button from "@components/controls/Button.astro";
-import Features from "@components/misc/Features.astro";
-import Carousel from "@components/misc/Carousel.astro";
-import Code from "@icons/code.svg";
-import Download from "@icons/download.svg";
-import Layout from "@layouts/MainLayout.astro";
+import albums from "@assets/albums.png"
+import library from "@assets/library.png"
+import lyrics from "@assets/lyrics.png"
+import player from "@assets/player.png"
+import Card from "@components/containers/Card.astro"
+import Button from "@components/controls/Button.astro"
+import Carousel from "@components/misc/Carousel.astro"
+import Features from "@components/misc/Features.astro"
+import Code from "@icons/code.svg"
+import Download from "@icons/download.svg"
+import Layout from "@layouts/MainLayout.astro"
 ---
 
 <Layout>
 	<section>
 		<Card className="hero" rounding="24px">
 			<div class="hero-left">
-				<h1>
-					Stream music from <mark>Navidrome</mark> with <mark
-						>Navic</mark
-					>
-				</h1>
-				<p>
-					Navic is a free and open source client for <a
-						href="https://navidrome.org"
-						target="_blank">Navidrome</a
-					>, supporting Android and iOS.
-				</p>
+				<h1>Stream music from <mark>Navidrome</mark> with <mark>Navic</mark></h1>
+				<p>Navic is a free and open source client for <a href="https://navidrome.org" target="_blank">Navidrome</a>, supporting Android and iOS.</p>
 				<Button size="large" href="/downloads">
-					<Download />
-					Downloads</Button
-				><Button
+					<Download />Downloads
+				</Button>
+				<Button
 					size="large"
 					variant="tonal"
 					href="https://github.com/ssalggnikool/Navic"
 				>
-					<Code />
-					Source Code</Button
-				>
+					<Code />Source Code
+				</Button>
 			</div>
 			<Carousel
 				class="hero-right"
 				images={[
 					{
 						src: library,
-						alt: "A screenshot of Navic's library tab",
+						alt: "A screenshot of Navic's library tab"
 					},
 					{
 						src: player,
-						alt: "A screenshot of Navic's now playing screen",
+						alt: "A screenshot of Navic's now playing screen"
 					},
 					{
 						src: lyrics,
-						alt: "A screenshot of Navic's lyrics screen",
+						alt: "A screenshot of Navic's lyrics screen"
 					},
 					{
 						src: albums,
-						alt: "A screenshot of Navic's albums tab",
-					},
+						alt: "A screenshot of Navic's albums tab"
+					}
 				]}
 			/>
 		</Card>

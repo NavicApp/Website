@@ -1,15 +1,15 @@
 ---
 interface Props extends astroHTML.JSX.HTMLAttributes {
-	className?: string;
-	variant?: "outlined" | "filled" | "elevated";
-	rounding?: string;
+	className?: string
+	variant?: "outlined" | "filled" | "elevated"
+	rounding?: string
 }
 const {
 	className,
 	variant = "filled",
 	rounding = "12px",
 	...props
-} = Astro.props as Props;
+} = Astro.props as Props
 ---
 
 <div

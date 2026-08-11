@@ -1,16 +1,16 @@
 ---
-import ChevronDown from "@icons/chevron-down.svg";
+import ChevronDown from "@icons/chevron-down.svg"
 interface Props {
-	title: string;
-	description: string;
+	title: string
+	description: string
 }
-const { title, description } = Astro.props as Props;
+const { title, description } = Astro.props as Props
 ---
 
 <details>
-	<summary class="layer"
-		>{title}<ChevronDown width="18" height="18" class="icon" /></summary
-	>
+	<summary class="layer">
+		{title}<ChevronDown width={18} height={18} class="icon" />
+	</summary>
 	<div class="content">{description}</div>
 </details>
 

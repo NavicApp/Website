@@ -1,4 +1,4 @@
-import { defineConfig, fontProviders } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config"
 
 export default defineConfig({
 	site: "https://navic.app",
@@ -15,10 +15,10 @@ export default defineConfig({
 				variants: [
 					{
 						weight: "100 900",
-						src: ["./src/assets/fonts/google-sans-flex.ttf"],
-					},
-				],
-			},
+						src: ["./src/assets/fonts/google-sans-flex.ttf"]
+					}
+				]
+			}
 		},
 		{
 			provider: fontProviders.local(),
@@ -28,10 +28,10 @@ export default defineConfig({
 				variants: [
 					{
 						weight: "100 900",
-						src: ["./src/assets/fonts/maple-mono.ttf"],
-					},
-				],
-			},
-		},
-	],
-});
+						src: ["./src/assets/fonts/maple-mono.ttf"]
+					}
+				]
+			}
+		}
+	]
+})

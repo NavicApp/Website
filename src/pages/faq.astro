@@ -1,56 +1,56 @@
 ---
-import Disclosure from "@components/controls/Disclosure.astro";
-import Layout from "@layouts/MainLayout.astro";
+import Disclosure from "@components/controls/Disclosure.astro"
+import Layout from "@layouts/MainLayout.astro"
 const mainEntity = [
 	{
 		"@type": "Question",
-		name: "What is Navidrome, and why does Navic use it?",
-		acceptedAnswer: {
+		"name": "What is Navidrome, and why does Navic use it?",
+		"acceptedAnswer": {
 			"@type": "Answer",
-			text: "Navidrome is a free and open source music streaming program, allowing you to stream a local copy of your music library without relying on any external services at all, such as Spotify. Navic uses Navidrome as it is a fairly popular choice.",
-		},
+			"text": "Navidrome is a free and open source music streaming program, allowing you to stream a local copy of your music library without relying on any external services at all, such as Spotify. Navic uses Navidrome as it is a fairly popular choice."
+		}
 	},
 	{
 		"@type": "Question",
-		name: "Is Navic free?",
-		acceptedAnswer: {
+		"name": "Is Navic free?",
+		"acceptedAnswer": {
 			"@type": "Answer",
-			text: "Navic is completely free and open source.",
-		},
+			"text": "Navic is completely free and open source."
+		}
 	},
 	{
 		"@type": "Question",
-		name: "Is Navic stable?",
-		acceptedAnswer: {
+		"name": "Is Navic stable?",
+		"acceptedAnswer": {
 			"@type": "Answer",
-			text: "Navic is not yet stable and is in a pre-release alpha state. However, most things should work just fine!",
-		},
+			"text": "Navic is not yet stable and is in a pre-release alpha state. However, most things should work just fine!"
+		}
 	},
 	{
 		"@type": "Question",
-		name: "Why Navic over other Navidrome clients?",
-		acceptedAnswer: {
+		"name": "Why Navic over other Navidrome clients?",
+		"acceptedAnswer": {
 			"@type": "Answer",
-			text: "Most Navidrome clients are closed source. This project was started in hopes of making an open and free alternative. Additionally, most clients just simply don't look very pretty, and we wanted to fix all of this. Navic is also native, making it one of the faster and efficient clients. It uses Compose and Kotlin.",
-		},
+			"text": "Most Navidrome clients are closed source. This project was started in hopes of making an open and free alternative. Additionally, most clients just simply don't look very pretty, and we wanted to fix all of this. Navic is also native, making it one of the faster and efficient clients. It uses Compose and Kotlin."
+		}
 	},
 	{
 		"@type": "Question",
-		name: "Does Navic work with other streaming services?",
-		acceptedAnswer: {
+		"name": "Does Navic work with other streaming services?",
+		"acceptedAnswer": {
 			"@type": "Answer",
-			text: "For now, no. However, some plugins for other services have been made to add compatibility with Navidrome clients.",
-		},
+			"text": "For now, no. However, some plugins for other services have been made to add compatibility with Navidrome clients."
+		}
 	},
 	{
 		"@type": "Question",
-		name: "Does Navic work with OpenSubsonic/Subsonic?",
-		acceptedAnswer: {
+		"name": "Does Navic work with OpenSubsonic/Subsonic?",
+		"acceptedAnswer": {
 			"@type": "Answer",
-			text: "Yes, it's just advertised for Navidrome for discoverability and to be easy to find. Navic will work on normal Subsonic, but some features may not work, so you should use an OpenSubsonic-compatible server.",
-		},
-	},
-];
+			"text": "Yes, it's just advertised for Navidrome for discoverability and to be easy to find. Navic will work on normal Subsonic, but some features may not work, so you should use an OpenSubsonic-compatible server."
+		}
+	}
+]
 ---
 
 <Layout
@@ -61,11 +61,9 @@ const mainEntity = [
 >
 	<div class="page-content">
 		<h2>Frequently Asked Questions</h2>
-		<span style="text-align: center;"
-			>Some answers to common questions about Navic.</span
-		>
+		<span style="text-align: center;">Some answers to common questions about Navic.</span>
 		{
-			mainEntity.map((qa) => (
+			mainEntity.map(qa => (
 				<Disclosure
 					title={qa.name}
 					description={qa.acceptedAnswer.text}

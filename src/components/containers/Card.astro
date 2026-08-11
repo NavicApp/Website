@@ -1,11 +1,14 @@
 ---
+import clsx from "@/utils/clsx.ts"
+
 interface Props extends astroHTML.JSX.HTMLAttributes {
-	className?: string
+	class?: string
 	variant?: "outlined" | "filled" | "elevated"
 	rounding?: string
 }
+
 const {
-	className,
+	class: className,
 	variant = "filled",
 	rounding = "12px",
 	...props
@@ -13,7 +16,7 @@ const {
 ---
 
 <div
-	class={className ? `card ${className}` : "card"}
+	class:list={["card", className]}
 	data-variant={variant}
 	style={{ "--rounding": rounding }}
 	{...props}
